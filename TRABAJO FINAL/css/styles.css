@@ -1,0 +1,96 @@
+/* estilos css para el menu*/
+.navbar {
+  background-color: #333; /* Color de fondo de la barra de navegación */
+  color: #fff; /* Color del texto en la barra de navegación */
+  width: 100%; /* Establecer el ancho al 100% */
+  position: fixed; /* Fijar la posición */
+  top: 0; /* Colocar la barra de navegación en la parte superior */
+  left: 0; /* Alinear la barra de navegación a la izquierda */
+  z-index: 999; /* Asegurarse de que la barra de navegación esté en la parte superior */
+  text-align: right; /* Alinear el contenido a la derecha */
+}
+ul.navbar{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #0f0f0f;
+}
+ul.navbar li{
+  float: left;
+}
+ul.navbar li a {
+  padding: 10px 20px; /* Espacio alrededor del enlace */
+  text-decoration: none;
+  color: #fff; /* Color del texto del enlace */
+  display: block;
+  text-align: center;
+}
+ul.navbar li a:hover{
+  background-color: #555; /* Color de fondo al pasar el cursor sobre el enlace */
+}
+li  {
+  display: inline-block;
+  margin-right: 10px;
+  }
+  h1{
+    font-family: 'Cambria', serif;
+    color: #000;
+    font-size: 30px;
+  }
+
+  h3{
+    font-family: 'Cambria', serif;
+    color: #000;
+    font-size: 30px;
+  }
+  h4{
+    font-family: 'Courier New',serif;
+    color: #000;
+    font-size: 25px
+  }
+  a   {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #000;
+    background-color: #141414;
+  }
+  a:hover     {
+    background-color: #0c0c0c;
+        }
+        /* Estilos css para el contenido*/
+        .content {
+          margin-top: 20px;
+          padding: 10px;
+          background-color: #1a1818;
+        }
+        #container {
+          position: relative;
+          width: 600px;
+          height: 400px;
+          overflow: hidden;
+        }
+        
+        .moving-image {
+          position: absolute;
+          top: 0;
+          left: 0;
+          animation: moveImage 10s linear infinite;
+        }
+        
+        @keyframes moveImage {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(100%);
+          }
+        }
+.slideshow-image {
+  display: none;
+}
+
+.active {
+  display: block;
+}        
