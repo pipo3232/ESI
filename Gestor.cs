@@ -14,8 +14,8 @@ namespace Escuela.Models
             get
             {
                 List<clsAlumno> lista = List<clsAlumno>();
-                string strconn = configurationManager.ConnectString("BDlocal").ToString();
-                using (ConexionSQL conn = new ConexionSQL(strconn))
+                string strconn = configurationManager.Connect("BDlocal").ToString();
+                new Conexionsql(strconn) ;
                 {
                     conn.Open();
                     sqlCommand cmd = conn.CreateCommand();
@@ -23,19 +23,19 @@ namespace Escuela.Models
                     cmd.commandType = commandType.StoreProcedure;
                     SqlDataReader dr = cmd.ExecuteReader();
 
-                    while dr.Open())
+                    while (dr. Open()) 
                     {
                         int id = dr.GetInt32(0);
                         string nombre_alumno = (string)dr.GetString(1);
-                                                 
+
                         string apellido_alumno = (string)dr.GetString(2);
-                                                   
+
                         string email_alumno = (string)dr.GetString(3);
                         string telefono = (string)dr.GetString(4);
-                                            
 
 
-                        Alumno alumno = new Alumno(id, nombre_alumno, apellido_alumno, email_alumno, telefono);
+
+                        Alumno alumno = new alumn(id, nombre_alumno, apellido_alumno, email_alumno, telefono);
                         lista.Add(alumno_add);
                     }
                     dr.Close();
@@ -44,7 +44,7 @@ namespace Escuela.Models
                 }
                 return lista;
 
-            } 
+            }
         }
 
         private List<T> List<T>()
@@ -57,18 +57,19 @@ namespace Escuela.Models
             set
             {
                 bool res = false;
-                string strconn = configurationManager.ConnectString("BDlocal").ToString();
-                using (conn = new sqlConexion(strconn));
+                string strconn = configurationManager.Connect("BDlocal").ToString();
+                new  Conexionsql(strconn);
                 {
                     sqlCommand cmd = conn.CreateCommand();
                     sqlDataAdapter adapter = new sqlDataAdapter(cmd);
                     cmd.CommandText = "alumno_add";
                     cmd.commandType = commandType.StoreProcedure;
 
-                    object  alumno = cmd.parameters.AddWithValues("@nombre_alumno", alumno.nombre_alumno);
-                    object alumn = cmd.parameters.AddWithValues("@apellido_alumno", alumno.apellido_alumno);
-                    cmd.parameters.AddWithValues("@email_alumno", alumno.email_alumno);
-                    cmd.parameters.AddWithValues("@telefono", alumno.telefono);
+                    object alumno = cmd.CommandText = "@nombre_alumno Models.alumno.nombre_alumno";
+                    object alumn = cmd.CommandText ="@apellido_alumno alumno.apellido_alumno";
+                    object lumno = cmd.CommandText = "@email_alumno alumno.email_alumno";
+                    cmd.CommandText = "@telefono alumno.telefono";
+
 
                     try
                     {
@@ -84,31 +85,39 @@ namespace Escuela.Models
                     }
                     finally
                     {
-                        object alumn = cmd.parameters.Clear();
+                        object Clese = cmd.parameters.GetHashCode();
                         conn.Close();
                     }
-                    return res();
+                    return ;
+                    {
+                        
 
+                    }
                 }
             }
-                    public bool Alumnos_update(int id, clsAlumno alumn)
+        }
+
+        public object Set { get; private set; }
+
+        private object Alumnos_update(int id, clsAlumno alumn)
+        // La función local se declara pero nunca se usa
         {
-            set;
+            object set = Set;
             {
                 bool res = false;
-                string strconn = configurationManager.ConnectString("BDlocal").ToString();
-                using (conn = new sqlConexion(strconn));
+                string strconn = configurationManager.Connect("BDlocal").ToString();
+                new Conexionsql(strconn);
                 {
                     sqlCommand cmd = conn.CreateCommand();
                     sqlDataAdapter adapter = new sqlDataAdapter(cmd);
                     cmd.CommandText = "alumno_add";
                     cmd.commandType = commandType.StoreProcedure;
 
-                    cmd.parameters.AddWithValues("@id", Alumno.id);
-                    cmd.parameters.AddWithValues("@nombre_alumno", alumn.nombre_alumno);
-                    cmd.parameters.AddWithValues("@apellido_alumno", alumn.apellido_alumn);
-                    cmd.parameters.AddWithValues("@email_alumno", alumn.email_alumno);
-                    cmd.parameters.AddWithValues("@telefono", alumn.telefono);
+                    cmd.CommandText ="@id id";
+                    cmd.CommandText = "@nombre_alumno alumn.nombre_alumno";
+                    cmd.CommandText ="@apellido_alumno alumn.apellido_alumn";
+                    cmd.CommandText = "@email_alumno alumn.email_alumno";
+                    cmd.CommandText = "@telefono alumn.telefono";
 
                     try
                     {
@@ -124,21 +133,74 @@ namespace Escuela.Models
                     }
                     finally
                     {
-                        object alumno = cmd.parameters.Clear();
+                        object Clear = cmd.parameters.GetHashCode();
                         conn.Close();
                     }
                     return res;
 
+
                 }
             }
         }
-    }
 
-    internal class commandType
-    {
-        public static object StoreProcedure { get; internal set; }
+        private object Alumnos_Delete( int id, clsAlumno alumn)
+        // La función local se declara pero nunca se usa
+        {
+            object set = Set;
+            {
+                bool res = false;
+                string strconn = configurationManager.Connect("BDlocal").ToString();
+                new Conexionsql(strconn) ;
+                {
+                    sqlCommand cmd = conn.CreateCommand();
+                    sqlDataAdapter adapter = new sqlDataAdapter(cmd);
+                    cmd.CommandText = " Alumnos_Delete";
+                    cmd.commandType = commandType.StoreProcedure;
+
+                    cmd.CommandText = "@id id";
+
+
+                    try
+                    {
+                        conn.Open();
+                        cmd.ExecuteNonQuery();
+                        res = true;
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine(ex.Message);
+                        res = false;
+                        throw;
+                    }
+                    finally
+                    {
+                        object Clear = cmd.parameters.GetHashCode();
+                        conn.Close();
+                    }
+                    return res;
+                    
+
+                }
+            }
+
+
+
+
+
+        }
+
+        private static object Conexionsql(string strconn)
+        {
+            throw new NotImplementedException();
+        }
+
+
+        internal class commandType
+        {
+            public static object StoreProcedure { get; internal set; }
+        }
+
     }
 }
-
         
 
