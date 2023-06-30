@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Inscripción</title>
+        <link rel="icon" type="jpg" href="img/inscripcion1.jpg">
+        <link rel="stylesheet" type="text/css" href="css/styles.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+        <script src="javascript/scripts.js"></script>
+    </head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+          <a class="navbar-brand">Orientación software | Pro-A</a>
+          <div class="collapse navbar-collapse">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="1index.html">Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="3Quienes somos.html">Quienes somos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="4Contacto.html">Contacto</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="6Ingresar.html">Ingresar</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="7sobrelaescuela.html">Sobre la escuela</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+<h1>Formulario de inscripcion</h1>
+<table class="formulario">
+    <div>
+        <tr>
+        <td><label for="nombre">Nombre:</label></td>
+        <td><input type="text" name="nombre" placeholder="Nombre completo"></td>
+    </tr>
+        </div>
+        <div>
+            <tr>
+            <td><label for="apellido">Apellido/s:</label></td>
+            <td><input type="text" name="apellido" placeholder="Apellido"></td>
+        </tr>
+         </div>
+        <div>
+            <tr>
+           <td> <label for="fecha-nacimiento">Fecha de nacimiento:</label></td>
+        <td><input type="date" id="fecha-nacimiento" name="fecha-nacimiento"></td>
+    </tr>
+</div>
+        <div>
+            <tr>
+            <td><label for="email">Correo electrónico:</label></td>
+            <td><input type="email" name="email" placeholder="Correo electrónico"></td>
+    </tr>
+        </div>
+        <div>
+            <tr>
+                <td><label for="password">Contraseña:</label></td>
+                <td><input type="password" name="contrasena" placeholder="Contraseña"></td>
+    </tr>
+        </div>
+        <div>
+            <tr>
+                <td><label for="genero">Seleccione su género:</label></td>
+        </tr>
+        </div>
+        <div>
+            <tr>
+                <td><input type="radio" name="genero" value="masculino">Masculino</td>
+                <td><input type="radio" name="genero" value="femenino">Femenino</td>
+    </tr>
+        </div>
+        <div>
+            <tr>
+                <td><label for="curso">Seleccione el curso que desea realizar:</label></td>
+                <td><select name="curso">
+    <option value="se">Seleccione</option>
+    <option value="ed">Entornos digitales</option>
+    <option value="so">Sistemas operativos</option>
+    <option value="pr">Programación</option>
+    <option value="dam">Desarrollo de aplicaciones móviles</option>
+    <option value="te">Testing</option>
+    <option value="tia">Taller de Inglés Aplicado</option>
+    <option value="di">Diseño de Interfaces Gráficas</option>
+    <option value="el">Ética y Legislación </option>
+    <option value="ro">Robótica </option>
+    <option value="ead">Estructura y Almacenamiento de Datos</option>
+</select></td>
+</tr>
+    </div>
+ <div>
+    <tr>
+        <td><label for="mensaje" class="label-mensaje">Deje su mensaje:</label></td>
+        <td><input type="text" id="mensaje" name="mensaje" class="input-mensaje" placeholder="Escriba su mensaje"></td>
+</tr>
+</div>
+<div>
+    <tr>
+        <form action="procesar-formulario.php" method="POST">
+          <!-- Elementos del formulario -->
+          <td><button type="button" class="OK" onclick="window.alert('¡Listo! Ya se encuentra inscripto en el curso que seleccionó.')"> <a href="1index.html">Enviar</a></button></td>
+      </tr>
+</div>
+</form>
+</table>
+</body>
+</html>
